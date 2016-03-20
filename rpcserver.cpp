@@ -82,8 +82,6 @@ void TRPCServer::readyRead(){
     QString requestText = QString::fromUtf8(buffer.data());
     if(requestText.length() < 1) { finish } ;
 
-    qDebug() << requestText;
-
     QStringList list = requestText.split("\n");
 
     QStringList meta = list.value(0).split(" ");
@@ -127,7 +125,8 @@ void TRPCServer::readyRead(){
         }
         int contentLen = requestText.length() - (requestText.indexOf("\r\n\r\n") + 4);
         QStringRef data = requestText.rightRef(contentLen);
-        if(contentLen != fullContentLen){ // Some special browser will send data later
+        qDebug() << "URL: " << url << " DATA:" << data;
+        if(data.toUtf8().size() != fullContentLen){ // Some special browser will send data later
             reqBufs[socket] = buffer;
             return;
         }

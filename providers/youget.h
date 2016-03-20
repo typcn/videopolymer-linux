@@ -2,10 +2,10 @@
 #define YOUGET_H
 #include "videoprovider.h"
 
-class youget : public VideoProvider
+class vp_youget : public VideoProvider
 {
 public:
-    youget();
+    virtual VideoAddress *getVideoAddress(map<string,string> params);
 };
 
 #endif // YOUGET_H

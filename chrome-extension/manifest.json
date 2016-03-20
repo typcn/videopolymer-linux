@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "VideoPolymer Helper",
+    "description": "Video Polymer Click to run",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "tabs",
+        "notifications"
+    ],
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "img/icon48.png",
+            "38": "img/icon48.png"
+        }
+    },
+    "background": {
+        "scripts": ["js/background.js"]
+    },
+    "content_security_policy": "script-src 'self' blob: filesystem: chrome-extension-resource: http://localhost:18069 http://localhost:18070 http://localhost:18071 http://localhost:18072 http://localhost:18073 http://localhost:18074 http://localhost:18075 http://localhost:18076 http://localhost:18077 http://localhost:18078 http://localhost:18079; object-src 'self'"
+}

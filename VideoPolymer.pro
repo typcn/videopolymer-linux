@@ -16,11 +16,21 @@ CONFIG += c++11
 SOURCES += main.cpp\
         mainwindow.cpp \
     rpcserver.cpp \
-    providers/youget.cpp
+    providers/youget.cpp \
+    videoaddress.cpp \
+    players/mpv.cpp \
+    playerloader.cpp \
+    3rd-party/waitingspinnerwidget.cpp
 
 HEADERS  += mainwindow.h \
     rpcserver.h \
-    videoprovider.h \
-    providers/youget.h
+    providers/youget.h \
+    videoaddress.h \
+    providers/videoprovider.h \
+    players/player.h \
+    players/mpv.h \
+    playerloader.h \
+    3rd-party/waitingspinnerwidget.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    playerloader.ui
